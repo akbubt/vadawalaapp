@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'select_business_type_screen.dart';
 import 'sign_up_screen.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -66,12 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const SelectBusinessTypeScreen()),
-                    );
+                    Navigator.pushReplacementNamed(context, '/'))
                   }
                 },
                 style: ElevatedButton.styleFrom(

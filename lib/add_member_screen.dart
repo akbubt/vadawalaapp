@@ -6,15 +6,15 @@ class AddMemberScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
-  final TextEditingController _parentPhoneController = TextEditingController();
-  final TextEditingController _addressController = TextEditingController();
-  final TextEditingController _occupationController = TextEditingController();
-  final TextEditingController _officeController = TextEditingController();
-  final TextEditingController _jobPositionController = TextEditingController();
-  final TextEditingController _bloodGroupController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController parentPhoneController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController occupationController = TextEditingController();
+  final TextEditingController officeController = TextEditingController();
+  final TextEditingController jobPositionController = TextEditingController();
+  final TextEditingController bloodGroupController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class AddMemberScreen extends StatelessWidget {
             icon: const Icon(Icons.arrow_back)),
       ),
       body: Form(
-        key: _formKey,
+        key: formKey,
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -63,7 +63,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                controller: _nameController,
+                controller: nameController,
                 decoration: const InputDecoration(
                   labelText: 'Name',
                   border: OutlineInputBorder(),
@@ -77,7 +77,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _phoneController,
+                controller: phoneController,
                 decoration: const InputDecoration(
                   labelText: 'Phone',
                   border: OutlineInputBorder(),
@@ -98,7 +98,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _parentPhoneController,
+                controller: parentPhoneController,
                 decoration: const InputDecoration(
                   labelText: 'Parent Name',
                   border: OutlineInputBorder(),
@@ -106,7 +106,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _parentPhoneController,
+                controller: parentPhoneController,
                 decoration: const InputDecoration(
                   labelText: 'Parent Relationship',
                   border: OutlineInputBorder(),
@@ -120,7 +120,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _addressController,
+                controller: addressController,
                 decoration: const InputDecoration(
                   labelText: 'Address',
                   border: OutlineInputBorder(),
@@ -128,7 +128,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _occupationController,
+                controller: occupationController,
                 decoration: const InputDecoration(
                   labelText: 'Occupation',
                   border: OutlineInputBorder(),
@@ -136,7 +136,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _officeController,
+                controller: officeController,
                 decoration: const InputDecoration(
                   labelText: 'Office',
                   border: OutlineInputBorder(),
@@ -144,7 +144,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _jobPositionController,
+                controller: jobPositionController,
                 decoration: const InputDecoration(
                   labelText: 'Job Position',
                   border: OutlineInputBorder(),
@@ -152,7 +152,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: _bloodGroupController,
+                controller: bloodGroupController,
                 decoration: const InputDecoration(
                   labelText: 'Blood Group',
                   border: OutlineInputBorder(),
@@ -165,7 +165,7 @@ class AddMemberScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          if (_formKey.currentState!.validate()) {
+          if (formKey.currentState!.validate()) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('Member saved')),
             );
@@ -173,6 +173,6 @@ class AddMemberScreen extends StatelessWidget {
         },
         child: const Icon(Icons.save),
       ),
-    );
+    )
   }
   }
