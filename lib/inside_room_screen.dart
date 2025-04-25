@@ -111,7 +111,6 @@ class _InsideRoomScreenState extends State<InsideRoomScreen> {
                                       Navigator.of(context).pop();
                                     },
                                   ),// TODO: Implement delete member logic
-                                  ),
                                 ],
                               );
                             });

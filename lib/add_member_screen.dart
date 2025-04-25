@@ -6,30 +6,29 @@ class AddMemberScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  final formKey = GlobalKey<FormState>();
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController parentPhoneController = TextEditingController();
-  final TextEditingController addressController = TextEditingController();
-  final TextEditingController occupationController = TextEditingController();
-  final TextEditingController officeController = TextEditingController();
-  final TextEditingController jobPositionController = TextEditingController();
-  final TextEditingController bloodGroupController = TextEditingController();
+    final formKey = GlobalKey<FormState>();
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController phoneController = TextEditingController();
+    final TextEditingController parentNameController = TextEditingController();
+    final TextEditingController parentRelationController = TextEditingController();
+    final TextEditingController addressController = TextEditingController();
+    final TextEditingController occupationController = TextEditingController();
+    final TextEditingController officeController = TextEditingController();
+    final TextEditingController jobPositionController = TextEditingController();
+    final TextEditingController bloodGroupController = TextEditingController();
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text("Add Member"),
-            Text('9:41'),
-          ],
-        ),
-        leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: const Icon(Icons.arrow_back)),
+            children: const [
+              Text("Add Member"),
+              Text('9:41'),
+            ],
+          ),
+          leading: IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: const Icon(Icons.arrow_back)),
       ),
       body: Form(
         key: formKey,
@@ -98,7 +97,7 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: parentPhoneController,
+                controller: parentNameController,
                 decoration: const InputDecoration(
                   labelText: 'Parent Name',
                   border: OutlineInputBorder(),
@@ -106,17 +105,11 @@ class AddMemberScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                controller: parentPhoneController,
+                controller: parentRelationController,
                 decoration: const InputDecoration(
                   labelText: 'Parent Relationship',
                   border: OutlineInputBorder(),
                 ),
-              ),
-              const SizedBox(height: 10),
-                keyboardType: TextInputType.phone,
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                ],
               ),
               const SizedBox(height: 10),
               TextFormField(
@@ -173,6 +166,6 @@ class AddMemberScreen extends StatelessWidget {
         },
         child: const Icon(Icons.save),
       ),
-    )
+    );
   }
-  }
+}

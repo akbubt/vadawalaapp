@@ -7,10 +7,10 @@ class SignInScreen extends StatefulWidget {
   static String id = 'sign_in_screen';
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  SignInScreenState createState() => SignInScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class SignInScreenState extends State<SignInScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -65,7 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    Navigator.pushReplacementNamed(context, '/'))
+                    Navigator.pushReplacementNamed(context, '/home');
                   }
                 },
                 style: ElevatedButton.styleFrom(
